@@ -1,4 +1,4 @@
-# Python virtual environment
+# Virtual environment
 .venv/
 venv/
 env/
@@ -10,17 +10,20 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# OS / editor
-.DS_Store
+# Editor / OS
 .vscode/
+.DS_Store
 
-# Generated annotation outputs
+# Dataset
+images/
+
+# Generated outputs
 annotations_output/
 
-# Large model weights
+# Model weights
 *.pt
 *.pth
 *.onnx
 
-# Python environment files
+# Environment variables
 .env
