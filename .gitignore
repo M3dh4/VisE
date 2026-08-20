@@ -1,0 +1,26 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+
+# Generated annotation outputs
+annotations_output/
+
+# Large model weights
+*.pt
+*.pth
+*.onnx
+
+# Python environment files
+.env
