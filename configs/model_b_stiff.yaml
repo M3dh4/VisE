@@ -1,0 +1,20 @@
+# Model B — Stiffness only
+# Inherits all defaults from base.yaml, overrides model and loss.
+
+_base_: "base.yaml"
+
+experiment:
+  name: "model_b_stiff"
+
+model:
+  use_depth_head: false
+  use_stiffness_head: true
+
+losses:
+  lambda_depth: 0.0
+  lambda_stiffness: 0.5
+  lambda_consistency: 0.0
+
+training:
+  early_stop_metric: "val/stiffness_alde"
+  early_stop_mode: "min"

@@ -1,0 +1,20 @@
+# Model A — Depth only
+# Inherits all defaults from base.yaml, overrides model and loss.
+
+_base_: "base.yaml"
+
+experiment:
+  name: "model_a_depth"
+
+model:
+  use_depth_head: true
+  use_stiffness_head: false
+
+losses:
+  lambda_depth: 1.0
+  lambda_stiffness: 0.0
+  lambda_consistency: 0.0
+
+training:
+  early_stop_metric: "val/depth_absrel"
+  early_stop_mode: "min"

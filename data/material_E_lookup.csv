@@ -1,0 +1,24 @@
+minc_class,include,E_min_GPa,E_max_GPa,E_median_GPa,provenance,note
+brick,1,10.0,30.0,20.0,ENG,"Fired clay masonry unit, dry"
+carpet,1,0.001,0.010,0.003,TEX,"Pile textile, through-thickness"
+ceramic,1,30.0,120.0,70.0,ENG,Domestic porcelain / stoneware
+fabric,1,0.0005,0.010,0.002,TEX,"Woven textile, low-tension"
+foliage,0,,,,EXCL,"Living tissue, turgor-dependent"
+food,0,,,,EXCL,Spans 5 decades within the class
+glass,1,50.0,90.0,70.0,ENG,Soda-lime silicate float glass
+hair,0,,,,EXCL,"Fibre bundle, not a bulk surface"
+leather,1,0.010,0.500,0.100,ENG,"Tanned hide, dry, in-plane"
+metal,1,45.0,210.0,110.0,ENG,"Al 70, Cu 117, steel 200"
+mirror,1,50.0,90.0,70.0,ENG,Silvered soda-lime glass substrate
+other,0,,,,EXCL,"Catch-all, no material identity"
+painted,0,,,,EXCL,Coating over unknown substrate
+paper,1,1.0,5.0,3.0,ENG,"Machine-made paper/card, in-plane"
+plastic,1,0.200,4.0,2.0,ENG,"PE 1.0, PP 1.5, PVC 3.0, PMMA 3.2"
+polished stone,1,40.0,100.0,60.0,ENG,"Marble / granite, finished"
+skin,0,,,,EXCL,Biological; also excluded ethically
+sky,0,,,,EXCL,Not a material surface
+stone,1,20.0,80.0,50.0,ENG,Unfinished natural stone
+tile,1,20.0,80.0,50.0,ENG,Fired ceramic floor/wall tile
+wallpaper,0,,,,EXCL,Thin covering over unknown substrate
+water,0,,,,EXCL,Fluid; E undefined
+wood,1,5.0,15.0,10.0,ENG,Parallel to grain

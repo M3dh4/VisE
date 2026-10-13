@@ -1,0 +1,52 @@
+# VisE — base configuration
+# All ablation configs inherit from this file.
+
+# ── Experiment ──────────────────────────────────────────────────────────
+experiment:
+  name: "vise_base"
+  seed: 1729
+  output_dir: "outputs"
+
+# ── Data ────────────────────────────────────────────────────────────────
+data:
+  minc_root: "minc-2500"                  # path to extracted MINC-2500
+  lookup_csv: "data/material_E_lookup.csv"
+  manifest_dir: "outputs/manifests"
+  pseudo_depth_dir: "outputs/pseudo_depth"
+  split: 1                                # MINC official split number
+  image_size: 364                         # MINC-2500 default crop size (≈362)
+  log_e_bin_width: 0.5                    # bin width for sample weighting
+
+# ── Model ───────────────────────────────────────────────────────────────
+model:
+  encoder: "depth-anything/Depth-Anything-V2-Small-hf"
+  freeze_blocks: [0, 1, 2, 3, 4, 5]      # blocks 1–6 (0-indexed)
+  use_depth_head: true
+  use_stiffness_head: true
+
+# ── Training ────────────────────────────────────────────────────────────
+training:
+  epochs: 50
+  batch_size: 16
+  num_workers: 4
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  warmup_epochs: 5
+  min_lr: 1.0e-6
+  mixed_precision: true
+  gradient_clip: 1.0
+  early_stop_patience: 10
+  early_stop_metric: "val/stiffness_alde"  # lower is better
+  early_stop_mode: "min"
+
+# ── Losses ──────────────────────────────────────────────────────────────
+losses:
+  lambda_depth: 1.0           # λ₁ — SILog
+  lambda_stiffness: 0.5       # λ₂ — interval-weighted MSE
+  lambda_consistency: 0.0     # λ₃ — SAM consistency, OFF by default (see §2)
+
+# ── Evaluation ──────────────────────────────────────────────────────────
+evaluation:
+  results_dir: "outputs/results"
+  figures_dir: "outputs/figures"
+  checkpoints_dir: "outputs/checkpoints"

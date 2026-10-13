@@ -27,3 +27,8 @@ annotations_output/
 
 # Environment variables
 .env
+# Generated outputs (keep the directory structure, not the contents)
+outputs/**
+!outputs/
+!outputs/*/
+!outputs/**/.gitkeep

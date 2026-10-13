@@ -1,0 +1,26 @@
+# VisE — Vision-based Stiffness Estimation
+# Core
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.36.0
+
+# Data
+datasets>=2.16.0
+pandas>=2.0.0
+numpy>=1.24.0
+pillow>=10.0.0
+
+# Config & utilities
+pyyaml>=6.0
+tqdm>=4.65.0
+
+# Visualisation
+matplotlib>=3.7.0
+
+# SAM 2 for segmentation masks
+ultralytics>=8.1.0
+
+# Note: this project is developed on Python 3.14 with a CPU-only torch build
+# (torch 2.13.0+cpu). Phases 3, 6 and 8 need CUDA; see README for the compute
+# plan. `ultralytics` and `transformers` wheels for 3.14 are new — if install
+# fails, a 3.11/3.12 venv is the known-good fallback.

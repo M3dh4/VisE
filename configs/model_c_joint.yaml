@@ -1,0 +1,17 @@
+# Model C — Joint (depth + stiffness)
+# Inherits all defaults from base.yaml. This IS the base config,
+# but we keep a named copy for clarity in ablation scripts.
+
+_base_: "base.yaml"
+
+experiment:
+  name: "model_c_joint"
+
+model:
+  use_depth_head: true
+  use_stiffness_head: true
+
+losses:
+  lambda_depth: 1.0
+  lambda_stiffness: 0.5
+  lambda_consistency: 0.0
