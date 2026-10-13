@@ -16,6 +16,7 @@ data:
   split: 1                                # MINC official split number
   image_size: 364                         # MINC-2500 default crop size (≈362)
   log_e_bin_width: 0.5                    # bin width for sample weighting
+  sample_weighting: "inverse_bin_freq"    # or "none"; see vise/dataset.py limitation 2
 
 # ── Model ───────────────────────────────────────────────────────────────
 model:
